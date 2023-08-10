@@ -14,9 +14,10 @@ import azure.durable_functions as df
 
 
 def orchestrator_function(context: df.DurableOrchestrationContext):
-    input = context.get_input()
-    print("input is", input)
-    result1 = yield context.call_activity('Durable', input['blob_name'])
+    # uncomment this code to test the blob trigger
+    # input = context.get_input()
+    # result1 = yield context.call_activity('Durable', input['blob_name'])
+    result1 = yield context.call_activity('Durable', "Tokyo")
     result2 = yield context.call_activity('Durable', "Seattle")
     result3 = yield context.call_activity('Durable', "London")
     return [result1, result2, result3]

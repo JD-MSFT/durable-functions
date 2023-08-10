@@ -10,8 +10,9 @@ import logging
 import time
 
 def main(name: str) -> str:
+    # update the range and sleep variables to test longer running functions
     logging.info(f"going into main!!! {name}")
-    for i in range(120):
+    for i in range(2):
         logging.info(f"Hello {name}! {i}")
-        time.sleep(60)
+        time.sleep(5)
     return f"Hello {name}!"
